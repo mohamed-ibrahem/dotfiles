@@ -4,6 +4,9 @@ autoload -U colors && colors
 # Disable CTRL-s from freezing your terminal's output.
 stty stop undef
 
+# Use our new .inputrc
+export INPUTRC=~/.inputrc
+
 # Enable comments when working in an interactive shell.
 setopt interactive_comments
 
@@ -40,13 +43,11 @@ setopt HIST_REDUCE_BLANKS    # Remove unnecessary blank lines.
 # Use modern completion system. Other than enabling globdots for showing
 # hidden files, these ares values in the default generated zsh config.
 autoload -U compinit
-compinit -u
+compinit
 _comp_options+=(globdots)
 
 zstyle ':completion:*' menu select=2
-zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 
 # dircolors is a GNU utility that's not on macOS by default. With this not
@@ -61,6 +62,21 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 
+# Use emacs keybindings even if your $EDITOR is set to Vim.
+bindkey -e
+
+# Ensure home / end keys continue to work.
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[H' beginning-of-line
+bindkey '\e[7~' beginning-of-line
+bindkey '\e[4~' end-of-line
+bindkey '\e[F' end-of-line
+bindkey '\e[8~' end-of-line
+bindkey '\e[3~' delete-char
+
+# Allows your gpg passphrase prompt to spawn (useful for signing commits).
+export GPG_TTY="$(tty)"
+
 # Enable FZF (this replaces needing ~/.fzf.zsh in your home directory).
 if [[ ! "${PATH}" == *${XDG_DATA_HOME}/fzf/bin* ]]; then
     export PATH="${PATH:+${PATH}:}${XDG_DATA_HOME}/fzf/bin"
@@ -70,9 +86,6 @@ fi
 
 # Enable autojump
 [[ -s "${HOME}/.autojump/etc/profile.d/autojump.sh" ]] && source "${HOME}/.autojump/etc/profile.d/autojump.sh"
-
-# Allows your gpg passphrase prompt to spawn (useful for signing commits).
-export GPG_TTY="$(tty)"
 
 # Configure FZF.
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
