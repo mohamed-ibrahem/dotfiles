@@ -96,6 +96,8 @@ set cmdheight=2 "Give more space for displaying messages.
 set updatetime=50 "Noticeable Delays and poor user experience.
 set shortmess+=c "Don't pass messages to ins-completion-menu.
 
+set clipboard=unnamed
+
 " -----------------------------------------------------------------------------
 " Basic mappings
 " -----------------------------------------------------------------------------
