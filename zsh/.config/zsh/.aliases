@@ -42,6 +42,9 @@ alias migrate="artisan migrate"
 alias test="artisan test"
 alias mfs="artisan migrate:fresh --seed"
 
+# Database
+alias db="mysql -uroot -e "
+
 # Android
 alias rns="npx react-native start"
 alias rna="npx react-native run-android"

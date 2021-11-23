@@ -7,6 +7,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 export ANDROID_HOME="${HOME}/Android/Sdk"
+export BROWSER=/usr/bin/google-chrome-stable
 
 # Add all local binaries to the system path.
 export PATH="${PATH}:${HOME}/.local/bin:${XDG_CONFIG_HOME}/composer/vendor/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/emulator:${XDG_DATA_HOME}/gem/ruby/3.0.0/bin"
