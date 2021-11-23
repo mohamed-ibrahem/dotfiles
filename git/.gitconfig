@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+	autocrlf = input
 
 [color "diff"]
 	whitespace = red reverse
@@ -8,3 +9,11 @@
 	path = ~/.gitconfig.user
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Mohamed Ibrahem
+	email = mohamed.ibr1994@gmail.com
