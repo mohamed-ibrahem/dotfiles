@@ -1,0 +1,34 @@
+#--------------------------------------------------------------------------
+# VIM Settings
+#--------------------------------------------------------------------------
+source ~/.vimrc " Source your .vimrc
+set scrolloff=5 " Show a few lines of context around the cursor.
+set incsearch " Do incremental searching.
+set clipboard+=ideajoin " Enable native IJ insertion in Vim.
+
+#--------------------------------------------------------------------------
+# IJ idea vim plugins
+#--------------------------------------------------------------------------
+set ideajoin
+set ideamarks
+set surround
+set multiple-cursors
+set idearefactormode=keep
+set keep-english-in-normal-and-restore-in-insert
+
+#--------------------------------------------------------------------------
+# Mappings
+#--------------------------------------------------------------------------
+nmap [q <Action>(FindPrevious)
+nmap ]q <Action>(FindNext)
+nmap [l <Action>(GotoPreviousError)
+nmap ]l <Action>(GotoNextError)
+nmap [m <Action>(MethodDown)
+nmap ]m <Action>(MethodUp)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap <leader>t <Action>(RunClass)
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>w <Action>(FileStructurePopup)
+nmap <C-=> <Action>(SplitVertically)
+nmap <C--> <Action>(CloseAllEditors)

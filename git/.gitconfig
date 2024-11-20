@@ -1,19 +1,29 @@
 [core]
 	editor = vim
+    excludesfile = ~/.gitignore_global
 	autocrlf = input
-
-[color "diff"]
-	whitespace = red reverse
-
-[include]
-	path = ~/.gitconfig.user
+[color]
+    ui = auto
 [init]
 	defaultBranch = main
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+[fetch]
+    prune = true
+[help]
+    autocorrect = 10
+[push]
+    default = current
+[rerere]
+    enabled = true
+[merge]
+    conflictstyle = diff3
+[pull]
+    rebase = false
+[init]
+    defaultBranch = main
 [user]
-	name = Mohamed Ibrahem
+	name = Mohamed Ibrahim
 	email = mohamed.ibr1994@gmail.com
+[alias]
+    undo-commit = reset --soft HEAD^
+    co = checkout
+    cob = checkout -b
