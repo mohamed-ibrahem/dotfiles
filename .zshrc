@@ -2,6 +2,7 @@
 # Zsh Env
 #--------------------------------------------------------------------------
 export XDG_DATA_HOME="${HOME}/.local/share"
+export ZSH_CACHE_DIR="${HOME}/.cache/zsh"
 
 #--------------------------------------------------------------------------
 # Zsh Configuration
