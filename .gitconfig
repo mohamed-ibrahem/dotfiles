@@ -24,6 +24,7 @@
 	name = Mohamed Ibrahim
 	email = mohamed.ibr1994@gmail.com
 [alias]
+    s = status --short --branch
     undo-commit = reset --soft HEAD^
     co = checkout
     cob = checkout -b
